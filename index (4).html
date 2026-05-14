@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỳ nghỉ Giỗ Tổ Hùng Vương & 30/4 - 1/5 🎉</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #f4a261;
+            --accent: #2a9d8f;
+            --dark: #1d3557;
+            --light-bg: #fff8f0;
+            --card-radius: 18px;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            margin: 0;
+        }
+
+        /* ===== BANNER ===== */
+        .banner-section {
+            background: url('https://image.dienthoaivui.com.vn/x,webp,q90/https://dashboard.dienthoaivui.com.vn/uploads/dashboard/editor_upload/hinh-anh-gio-to-hung-vuong-2.jpg') center center / cover no-repeat;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 0;
+        }
+
+        .banner-section::after {
+            content: none;
+        }
+
+        .banner-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-emoji {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 12px;
+            animation: bounce 1.8s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .banner-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3.8rem);
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.25);
+            margin-bottom: 10px;
+        }
+
+        .banner-sub {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.92);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .banner-flags {
+            margin-top: 18px;
+            font-size: 2rem;
+            letter-spacing: 8px;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-align: center;
+            margin: 50px 0 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+            margin: 10px auto 0;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            border: none;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .badge-place {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #fff;
+            font-size: 0.75rem;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* ===== PLACEHOLDER IMAGES (gradient) ===== */
+        .img-placeholder {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .img-placeholder span.label {
+            font-size: 0.8rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+        }
+
+        .ph-1 { background: linear-gradient(135deg, #e63946, #f4a261); color: #fff; }
+        .ph-2 { background: linear-gradient(135deg, #2a9d8f, #e9c46a); color: #fff; }
+        .ph-3 { background: linear-gradient(135deg, #457b9d, #a8dadc); color: #fff; }
+        .ph-4 { background: linear-gradient(135deg, #f4a261, #e63946); color: #fff; }
+        .ph-5 { background: linear-gradient(135deg, #264653, #2a9d8f); color: #fff; }
+        .ph-6 { background: linear-gradient(135deg, #e9c46a, #f4a261); color: #fff; }
+        .ph-7 { background: linear-gradient(135deg, #e63946, #264653); color: #fff; }
+
+        /* ===== MEMORY TIMELINE ===== */
+        .memory-card {
+            border-left: 5px solid var(--secondary);
+            border-radius: 0 var(--card-radius) var(--card-radius) 0 !important;
+        }
+
+        .memory-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        /* ===== WANT-TO-GO HIGHLIGHT ===== */
+        .want-card {
+            border: 3px dashed var(--accent);
+            border-radius: var(--card-radius);
+            background: #fff;
+            position: relative;
+        }
+
+        .want-ribbon {
+            position: absolute;
+            top: 16px; right: -4px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 4px 0 0 4px;
+            letter-spacing: 0.5px;
+            box-shadow: -2px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+            padding: 28px 16px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        footer strong { color: var(--secondary); }
+
+        /* ===== DIVIDER WAVE ===== */
+        .wave-divider {
+            text-align: center;
+            font-size: 1.6rem;
+            letter-spacing: 6px;
+            opacity: 0.35;
+            margin: 10px 0;
+        }
+
+        /* ===== FADE IN ANIMATION ===== */
+        .fade-in {
+            animation: fadeInUp 0.7s ease both;
+        }
+        .fade-in:nth-child(2) { animation-delay: 0.15s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== BANNER ===== -->
+<div class="banner-section">
+    <span class="banner-emoji">🎉</span>
+    <h1 class="banner-title">Giỗ Tổ Hùng Vương & 30/4 - 1/5</h1>
+    <p class="banner-sub">Uống nước nhớ nguồn · Giải phóng miền Nam · Ngày Quốc tế Lao động</p>
+    <div class="banner-flags">🇻🇳 🏯 🎊 🌺 🇻🇳</div>
+</div>
+
+<!-- ===== NHỮNG NƠI ĐÃ ĐI ===== -->
+<div class="container">
+    <h2 class="section-title">🗺️ Những nơi mình đã đi</h2>
+    <div class="row g-4">
+
+        <div class="col-12 col-md-4 fade-in">
+            <div class="card shadow h-100">
+                <img src="https://cdn.vietnammoi.vn/1881912202208777/images/2024/4/10/gio-to-hung-vuong-02-20240410115839340.jpg?width=700" class="card-img-top" alt="Giỗ Tổ Hùng Vương">
+                <div class="card-body">
+                    <span class="badge-place" style="background: linear-gradient(90deg, #c0392b, #e67e22);">📍 Phú Thọ</span>
+                    <h5 class="card-title">Lễ Giỗ Tổ Hùng Vương</h5>
+                    <p class="card-text">
+                        Mình đã được về Đất Tổ dịp 10/3 âm lịch, hòa vào dòng người thành kính 
+                        dâng hương tưởng nhớ các Vua Hùng. Không khí linh thiêng, trang nghiêm 
+                        khiến mình thêm tự hào về cội nguồn dân tộc.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 fade-in">
+            <div class="card shadow h-100">
+                <img src="https://congvientaodan.com/wp-content/uploads/2024/10/dinh-doc-lap-1.jpg" class="card-img-top" alt="Dinh Độc Lập">
+                <div class="card-body">
+                    <span class="badge-place">📍 TP. Hồ Chí Minh</span>
+                    <h5 class="card-title">Dinh Độc Lập</h5>
+                    <p class="card-text">
+                        Mình đã có dịp tham quan Dinh Độc Lập — chứng nhân lịch sử của ngày 30/4/1975. 
+                        Không gian trang nghiêm, kiến trúc độc đáo và những hiện vật lịch sử khiến mình 
+                        thực sự xúc động và tự hào.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 fade-in">
+            <div class="card shadow h-100">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.QKsEy-qoxvIPxSQ1D-ruVgHaE-?pid=Api&P=0&h=180" class="card-img-top" alt="Biển Vũng Tàu">
+                <div class="card-body">
+                    <span class="badge-place">📍 Vũng Tàu</span>
+                    <h5 class="card-title">Biển Vũng Tàu</h5>
+                    <p class="card-text">
+                        Sau những ngày tham quan di tích, mình cùng gia đình ra biển Vũng Tàu thư giãn. 
+                        Sóng biển xanh, hải sản tươi ngon và không khí trong lành — kỳ nghỉ lễ thật 
+                        hoàn hảo!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="wave-divider container">~ ~ ~ ~ ~ ~ ~ ~ ~ ~</div>
+
+<!-- ===== NHỮNG NƠI MUỐN ĐI ===== -->
+<div class="container">
+    <h2 class="section-title">✈️ Những nơi mình muốn đi</h2>
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-6">
+            <div class="want-card card shadow-sm h-100 p-0 position-relative">
+                <span class="want-ribbon">💭 Ước mơ</span>
+                <img src="https://img1.kienthucvui.vn/uploads/2022/01/03/anh-co-do-hue-chat-luong-cao_102208139.jpg" class="card-img-top" alt="Cố đô Huế" style="border-radius: 15px 15px 0 0;">
+                <div class="card-body">
+                    <span class="badge-place" style="background: linear-gradient(90deg, var(--accent), #264653);">📍 Thừa Thiên Huế</span>
+                    <h5 class="card-title">Cố đô Huế</h5>
+                    <p class="card-text">
+                        Mình rất muốn được khám phá Đại Nội Huế, lăng tẩm các vua triều Nguyễn 
+                        và thưởng thức ẩm thực cung đình. Đây chắc chắn là điểm đến trong 
+                        kỳ nghỉ lễ tiếp theo!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="want-card card shadow-sm h-100 p-0 position-relative">
+                <span class="want-ribbon">💭 Ước mơ</span>
+                <img src="https://diditravel.vn/wp-content/uploads/2025/06/Phong-Nha-Ke-Bang.jpg" class="card-img-top" alt="Phong Nha - Kẻ Bàng" style="border-radius: 15px 15px 0 0;">
+                <div class="card-body">
+                    <span class="badge-place" style="background: linear-gradient(90deg, var(--accent), #264653);">📍 Quảng Bình</span>
+                    <h5 class="card-title">Phong Nha - Kẻ Bàng</h5>
+                    <p class="card-text">
+                        Động Phong Nha huyền bí với những thạch nhũ kỳ diệu luôn là nơi mình 
+                        mơ được đến. Khám phá hang động, leo núi và hòa mình vào thiên nhiên 
+                        hùng vĩ — nhất định sẽ thực hiện!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="wave-divider container">~ ~ ~ ~ ~ ~ ~ ~ ~ ~</div>
+
+<!-- ===== KỶ NIỆM ===== -->
+<div class="container">
+    <h2 class="section-title">📸 Những kỷ niệm đã trải qua</h2>
+    <div class="row g-4">
+
+        <div class="col-12 col-md-4 fade-in">
+            <div class="card shadow memory-card h-100">
+                <img src="https://hanoispiritofplace.com/wp-content/uploads/2017/12/hinh-anh-phao-hoa-dep-46.jpg" class="card-img-top" alt="Pháo hoa" style="height:180px; object-fit:cover;">
+                <div class="card-body">
+                    <div class="memory-icon">🎆</div>
+                    <p class="card-text mt-2">
+                        Đêm 30/4, mình cùng bạn bè ra công viên xem màn pháo hoa rực rỡ. 
+                        Tiếng reo hò vang lên, ánh sáng lung linh — một khoảnh khắc 
+                        không thể quên!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 fade-in">
+            <div class="card shadow memory-card h-100">
+                <img src="https://congdankhuyenhoc.qltns.mediacdn.vn/449484899827462144/2025/3/2/am-thuc-duong-pho-viet-nam-7-174092791621314325470.jpg" class="card-img-top" alt="Ẩm thực đường phố" style="height:180px; object-fit:cover;">
+                <div class="card-body">
+                    <div class="memory-icon">🍜</div>
+                    <p class="card-text mt-2">
+                        Lạc vào những con hẻm ẩm thực, thưởng thức hủ tiếu, bánh mì 
+                        và café sữa đá cùng với tiếng nhạc vui nhộn dịp lễ. 
+                        Bữa ăn ngon nhất là bữa ăn có kỷ niệm!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 fade-in">
+            <div class="card shadow memory-card h-100">
+                <img src="https://img4.thuthuatphanmem.vn/uploads/2020/12/26/hinh-anh-ban-be-dep-nhat_021839865.jpg" class="card-img-top" alt="Bạn bè" style="height:180px; object-fit:cover;">
+                <div class="card-body">
+                    <div class="memory-icon">👫</div>
+                    <p class="card-text mt-2">
+                        Khoảng thời gian quý giá nhất là những giờ lang thang cùng 
+                        nhóm bạn thân, chụp ảnh, cười đùa và tạo nên những kỷ niệm 
+                        chỉ thuộc về mùa hè này.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div>🇻🇳 <strong>Kỳ nghỉ lễ 30/4 - 1/5</strong> · Tự hào dân tộc Việt Nam 🇻🇳</div>
+    <div class="mt-1" style="font-size:0.8rem;">Website thiết kế bằng <strong>Bootstrap 5</strong> · Chủ đề kỳ nghỉ lễ</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
